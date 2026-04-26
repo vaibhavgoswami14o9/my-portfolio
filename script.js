@@ -1,3 +1,4 @@
+// page indicator-- mouse tracker--for navbar
 const menu = document.querySelector(".main-menu-bar");
 const indicator = document.querySelector(".page-indicator");
 
@@ -34,6 +35,8 @@ if (menu && indicator) {
 
   animateIndicator();
 }
+// -----------------------------------------------------------------------
+// js code for jelly that follows mouse on the hero section
 const hero = document.querySelector(".hero-container");
 const main = document.querySelector(".main-jelly");
 const two = document.querySelector(".jelly-two");
@@ -172,6 +175,8 @@ if (btn) {
       "perspective(700px) rotateX(0deg) rotateY(0deg) translateY(0)";
   });
 }
+// ---------------------------------------------------------------------------------------------
+// background radom black particles on the hero page
 const particleWrap = document.querySelector(".hero-particles");
 
 if (particleWrap) {
@@ -191,6 +196,8 @@ if (particleWrap) {
     particleWrap.appendChild(dot);
   }
 }
+// -------------------------------------------------------------------------------------------------------
+// tex changing animation of the hero page
 const roles = [
   "Software Developer",
   "Frontend Developer",
@@ -215,3 +222,4 @@ setInterval(() => {
   }, 700);
 
 }, 2500);
+// ------------------------------------------------------------------------------------------------------------

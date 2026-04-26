@@ -5,8 +5,6 @@
   margin: 0;
   padding: 0;
 }
-
-/* BUG FIX: Added smooth scrolling for anchor nav links */
 html {
   scroll-behavior: smooth;
 }
@@ -14,7 +12,6 @@ html {
 body {
   background-color: #dde4ea;
   font-family: 'Space Grotesk', sans-serif;
-  /* FIX: Prevent horizontal overflow from absolutely-positioned blobs */
   overflow-x: hidden;
 }
 
@@ -24,8 +21,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+/* Utility */
 
-
+/* navbar area ------------------------------------------------------------ */
 .navbar {
   display: flex;
   align-items: center;
@@ -34,13 +32,11 @@ body {
   margin: 1rem;
   z-index: 1000;
 }
-
-/* Logo */
 .main-logo-container {
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
-  overflow: hidden;                     /* FIX: clip child img cleanly */
+  overflow: hidden;                    
   flex-shrink: 0;
   transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
@@ -57,7 +53,6 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-/* Menu bar pill */
 .main-menu-bar {
   margin: auto;
   position: relative;
@@ -87,8 +82,6 @@ body {
     0 12px 28px rgba(0, 0, 0, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
-
-/* Page-indicator slider */
 .page-indicator {
   position: absolute;
   top: 50%;
@@ -103,13 +96,11 @@ body {
     0 0 18px rgba(255, 255, 255, 0.55),
     0 0 28px rgba(100, 180, 255, 0.35);
   pointer-events: none;
-  /* BUG FIX: was missing — indicator was always visible on load */
   opacity: 0;
   transition: left 0.12s linear, opacity 0.2s ease;
   z-index: 0;
 }
 
-/* Nav links */
 .nav-buttons {
   display: block;
   margin: 0 0.4rem;
@@ -123,8 +114,6 @@ body {
   transform: translateY(-2px) scale(1.03);
   color: #000;
 }
-
-/* Hamburger */
 .hamburger-icon {
   margin-right: 1.8rem;
   opacity: 0.7;
@@ -150,7 +139,6 @@ body {
   background-color: black;
   border-radius: 1rem;
 }
-/* FIX: widths were set on generic .hamburger-stick; now split by role */
 .ham-top-big,
 .ham-bottom-big {
   width: 2.6rem;
@@ -177,8 +165,9 @@ body {
   background-color: black;
   border-radius: 1rem;
 }
+/* ------------------------------------------------------------------------------------------------------------------------- */
 
-
+/* hero section main body-------------------------------------------------------------------------------------------------- */
 
 #hero-section {
   position: relative;
@@ -220,7 +209,6 @@ body {
   overflow: visible;            
 }
 
-/* ---- Jelly blobs ---- */
 .hero-jelly {
   position: absolute;
   left: 0;
@@ -248,12 +236,9 @@ body {
     0 16px 34px rgba(0, 0, 0, 0.14),
     0 0 22px rgba(255, 255, 255, 0.35);
   mix-blend-mode: screen;
-  /* FIX: GPU hint for smoother animation */
   will-change: left, top;
   animation: jellyMorph 2.4s ease-in-out infinite;
 }
-
-/* Highlight gloss */
 .hero-jelly::before {
   content: "";
   position: absolute;
@@ -310,7 +295,6 @@ body {
 .jelly-three { width:30px; height:30px; animation-duration: 3.8s; }
 .jelly-four { width:30px; height:30px; animation-duration: 2.8s; }
 
-/* ---- Hero text ---- */
 .hero-name-wrap,
 .hero-my-info,
 .hire-me-button {
@@ -345,7 +329,7 @@ body {
 .hero-last-name {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
-  font-size: clamp(4rem, 10vw, 10rem);  /* FIX: was hard 10rem, now fluid */
+  font-size: clamp(4rem, 10vw, 10rem); 
   letter-spacing: -0.05em;
   line-height: 0.85;
   margin-top: -0.5rem;
@@ -361,8 +345,6 @@ body {
   -webkit-text-fill-color: transparent;
   color: transparent;
   -webkit-text-stroke: 1px rgba(120, 130, 145, 0.48);
-  /* BUG FIX: text-shadow has no effect on -webkit-text-fill-color:transparent.
-     Use filter:drop-shadow instead to achieve depth on clipped text. */
   filter:
     drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12))
     drop-shadow(0 8px 18px rgba(0, 0, 0, 0.08));
@@ -380,9 +362,9 @@ body {
 }
 
 .hero-my-info {
-  font-size: clamp(1rem, 1.5vw, 1.6rem);  /* FIX: was fixed 1.5em */
+  font-size: clamp(1rem, 1.5vw, 1.6rem);  
   font-weight: 550;
-  max-width: 48ch;                          /* FIX: prevent runaway line length */
+  max-width: 48ch;                        
   margin-top: 3rem;
   line-height: 1.5;
   letter-spacing: 2px;;
@@ -396,18 +378,18 @@ body {
   justify-content: space-between;
   font-weight: bold;
   font-size: auto;
-  min-width: 290px;   /* keeps space fixed */
+  min-width: 290px;  
   white-space: nowrap;
   overflow: hidden;
 }
 
-/* diagonal wipe overlay */
+
 .dev::after{
   content: "";
   position: absolute;
   inset: -20% -10%;
   border:10px solid black;
-  background: #dde4ea;   /* same as page background */
+  background: #dde4ea;   
   transform: translateX(-130%) skewX(-30deg);
   pointer-events: none;
 }
@@ -428,14 +410,11 @@ body {
   }
 }
 
-/* ---- Hire Me button ---- */
 .hire-me-button {
-  /* FIX: replaced em-based height/width (relative to 3rem font-size = huge)
-     with explicit padding for predictable sizing */
   padding: 0.75rem 2.5rem;
   width: fit-content;
 
-  border: none;                            /* FIX: was missing for <button> */
+  border: none;                    
   border-radius: 18px;
   border: 1.5px solid rgba(255, 255, 255, 0.42);
 
@@ -466,7 +445,6 @@ body {
   transition: transform 0.12s ease, box-shadow 0.18s ease;
 }
 
-/* Moving light sweep */
 .hire-me-button::before {
   content: "";
   position: absolute;
@@ -516,7 +494,6 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
 .hire-me-button:active  { transform: scale(0.98); }
-/* FIX: keyboard focus ring */
 .hire-me-button:focus-visible {
   outline: 2px solid rgba(0, 0, 0, 0.4);
   outline-offset: 3px;
@@ -531,7 +508,7 @@ body {
   }
 }
 
-/* ---- Spline background ---- */
+/*Spline background */
 .oil-drop {
   width: 100vw;
   height: 100vh;
@@ -546,6 +523,7 @@ body {
   height: 100%;
   display: block;
 }
+/* Spline background */
 .hero-particles{
   position:absolute;
   inset:0;
