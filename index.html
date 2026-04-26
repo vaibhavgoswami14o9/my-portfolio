@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vaibhav Goswami — Frontend Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="main-logo-container">
+          <a href="/index.html">
+            <img src="name-logo.png" alt="Vaibhav Goswami logo" />
+          </a>
+        </div>
+
+        <div class="main-menu-bar">
+          <div class="page-indicator"></div>
+
+          <ul class="nav-links flex-center">
+            <li><a href="#hero-section" class="nav-buttons">Home</a></li>
+            <li><a href="#about" class="nav-buttons">About</a></li>
+            <li><a href="#skills" class="nav-buttons">Skills</a></li>
+            <li><a href="#projects" class="nav-buttons">Projects</a></li>
+            <li><a href="#contact" class="nav-buttons">Contact</a></li>
+          </ul>
+        </div>
+
+        <div
+          class="hamburger-icon"
+          role="button"
+          aria-label="Open menu"
+          tabindex="0"
+        >
+          <div class="hamburg-top">
+            <div class="hamburger-stick ham-top-big"></div>
+            <div class="ham-top-small"></div>
+          </div>
+
+          <div class="hamburger-stick ham-between"></div>
+
+          <div class="hamburg-bottom">
+            <div class="ham-bottom-small"></div>
+            <div class="hamburger-stick ham-bottom-big"></div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero-section">
+        <div class="hero-particles"></div>
+        <div class="hero-email"><a href="mailto:vaibhavgoswami0914@gmail.com">vaibhavgoswami0914@gmail.com</a></div>
+        <div class="hero-container">
+          <div class="hero-jelly main-jelly" aria-hidden="true">
+            <canvas class="jelly-canvas"></canvas>
+          </div>
+
+          <div
+            class="hero-jelly small-jelly jelly-two"
+            aria-hidden="true"
+          ></div>
+          <div
+            class="hero-jelly small-jelly jelly-three"
+            aria-hidden="true"
+          ></div>
+          <div
+            class="hero-jelly small-jelly jelly-four"
+            aria-hidden="true"
+          ></div>
+
+          <div class="hero-name-wrap">
+            <div class="hero-name">
+              <div class="hero-first-name">VAIBHAV</div>
+              <div class="hero-last-name">GOSWAMI</div>
+            </div>
+          </div>
+
+          <p class="hero-my-info">
+            HI! I'm Vaibhav.A <span class="dev" id="changing-text">Software Developer</span> passionate about crafting digital
+            experiences. I love building intuitive web apps, exploring new
+            technologies, and turning creative ideas into accessible tools.
+          </p>
+
+          <button class="hire-me-button flex-center" type="button">
+            HIRE ME
+          </button>
+        </div>
+
+        <div class="oil-drop" aria-hidden="true">
+          <spline-viewer
+            url="https://prod.spline.design/A022HqKZN3Mjootg/scene.splinecode"
+            loading="lazy"
+          >
+          </spline-viewer>
+        </div>
+        <div class="hero-social-container">
+          <div class="github-container icon-container"><a href="https://github.com/vaibhavgoswami14o9"><img src="github.svg" alt="github logo"></a> </div>
+          <div class="linkedin-container icon-container"><a href="www.linkedin.com/in/vaibhav-goswami-14vg"><img src="linkedin.svg" alt="linkedin logo"></a></div>
+          <div class="leetcode-container icon-container"><a href=""><img src="leetcode.svg" alt="leetcode logo"></a></div>
+          <div class="instagram-container icon-container"><a href=""><img src="instagram.svg" alt="instagram logo"></a></div>
+        </div>
+      </section>
+      <section id="aboutme-section">
+      </section>
+    </main>
+
+    <footer></footer>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="script.js" defer></script>
+    <script
+      type="module"
+      src="https://unpkg.com/@splinetool/viewer@1.12.88/build/spline-viewer.js"
+    ></script>
+  </body>
+</html>
