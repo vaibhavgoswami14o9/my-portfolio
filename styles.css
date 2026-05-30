@@ -722,35 +722,6 @@ body {
   }
 }
 
-.about-me-container {
-  max-width: 40rem;
-  max-height: 30rem;
-  display: flex;
-  border: 2px solid white;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-  padding: 1.5rem;
-}
-.about-me-container p {
-  color: white;
-  font-size: 1.2em;
-  text-align: left;
-}
-.resume-download-button {
-  width: fit-content;
-  font-family: "Space Grotesk", sans-serif;
-  font-weight: bold;
-  padding: 0.5rem 0.8rem;
-  border: 2px solid white;
-  font-size: 1.6em;
-  background: white;
-  border-radius: 2rem;
-  position: absolute;
-  bottom: 2rem;
-  left: 0;
-}
 .icon-container img {
   width: 70%;
   height: 70%;
@@ -782,7 +753,7 @@ body {
   width: 100%;
   position: relative;
   display: flex;
-  padding: 5rem 5rem;
+  padding:5rem 0rem;
   flex-direction: column;
 }
 .about-me-heading {
@@ -802,11 +773,41 @@ body {
   margin-top: 5rem;
   gap: 10rem;
 }
+.about-me-container {
+  max-width: 43rem;
+  max-height: 32rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  padding: 1rem;
+}
+.about-me-container p {
+  color: white;
+  font-size: 1.3em;
+  text-align: left;
+}
+.resume-download-button {
+  width: fit-content;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: bold;
+  padding: 0.5rem 0.8rem;
+  border: 2px solid white;
+  font-size: 1.6em;
+  background: white;
+  border-radius: 2rem;
+  position: absolute;
+  bottom: 0rem;
+  left: 2rem;
+}
+
 .my-picture-container {
   width: 30rem;
   height: 40rem;
-  margin-left: 10rem;
-  position: relative;
+  position: absolute;
+  top:-6rem;
+  right:18rem;
 }
 
 .my-picture-container::before {
@@ -845,7 +846,7 @@ body {
   content: "";
   position: absolute;
   left: 46%;
-  top: -10%;
+  top: -3%;
   width: 35rem;
   height: 100%;
   transform: translateX(-50%);
@@ -933,3 +934,115 @@ body {
 
   filter: blur(8px);
 }
+.skills-section-main-container{
+  width:100%;
+  height:28rem;
+  display:flex;
+  flex-direction: column;
+}
+.skill-row{
+  width:100%;
+  height:7rem;
+  display:flex;
+  align-items: center;
+  overflow-x: hidden;
+}
+.skill-heading{
+  color:white;
+  text-align: center;
+  font-size: 4rem;
+  padding:2rem;
+  font-weight: bold ;
+}
+.skill-container {
+  width: 15rem;
+  height: 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color:white;
+  font-weight: bold;
+  font-family: "Space Grotesk", sans-serif;
+
+
+
+
+  transition: all 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.skill-container:hover {
+  transform: translateY(-4px);
+    border-radius: 2rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.04)
+  );
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 12px 40px rgba(255, 255, 255, 0.08),
+    0 0 20px rgba(255, 255, 255, 0.05);
+    filter: grayscale(0%);
+}
+.skill-container img{
+  width:3rem;
+  height:3rem;
+  transition:0.3s ease;
+}
+.skill-container:hover{
+  filter: grayscale(0%);
+}
+
+.skill-track{
+    display:flex;
+    gap:7rem;
+    width:max-content;
+}
+
+.row1 .skill-track{
+    animation: scrollLeft 30s linear infinite;
+}
+
+.row2 .skill-track{
+    animation: scrollRight 35s linear infinite;
+}
+
+.row3 .skill-track{
+    animation: scrollLeft 32s linear infinite;
+}
+
+.row4 .skill-track{
+    animation: scrollRight 37s linear infinite;
+}
+
+@keyframes scrollLeft{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+@keyframes scrollRight{
+    from{
+        transform:translateX(-50%);
+    }
+    to{
+        transform:translateX(0);
+    }
+}
+/* SECTION 2 ENDS HERE THAT IS THE ABOUT ME SECTION */
+/* -------------------------------------------------------------------- */
+/* SECTION 3 MY PROJECTS SECTION STARTS HERE */

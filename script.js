@@ -221,3 +221,6 @@
     }, 700);
   }, 2500);
   // ------------------------------------------------------------------------------------------------------------
+document.querySelectorAll(".skill-track").forEach(track => {
+    track.innerHTML += track.innerHTML;
+});
